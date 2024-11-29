@@ -20,7 +20,9 @@ const Calculator = () => {
             setInput('Error');
         }
     };
-
+    const incrementByTwo = () => {
+      setInput((parseInt(input) || 0)+2);
+    };
     return (
         <div className="calculator">
             <input type="text" value={input} readOnly />
@@ -47,6 +49,7 @@ const Calculator = () => {
                 <button onClick={() => handleClick('0')}>0</button>
                 <button onClick={() => handleEqual()}>=</button>
                 <button onClick={() => handleClick('/')}>/</button>
+                <button onClick={() => incrementByTwo('+2')}>+2</button>
             </div>
         </div>
     );
